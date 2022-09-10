@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entities;
+package model.entities;
 
-import entities.enums.Sala;
-import entities.enums.StatusAgendamento;
+import model.entities.enums.Sala;
+import model.entities.enums.StatusAgendamento;
 import java.time.Instant;
 
 /**

@@ -2,34 +2,34 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
-package entities.enums;
+package model.entities.enums;
 
 /**
  *
  * @author giang
  */
-public enum Sala {
-    SALA_1((byte) 1, "Sala 1"),
-    SALA_2((byte) 2, "Sala 2"),
-    SALA_3((byte) 3, "Sala 3"),
-    SALA_4((byte) 4, "Sala 4");
+public enum StatusAgendamento {
+    EM_OFERTA((byte) 1, "Em oferta"),
+    PREENCHIDO((byte) 2, "Preenxido"),
+    CONCLUIDO((byte) 3, "Concluído"),
+    CANCELADO((byte) 4, "Cancelado");
 
     private Byte cod;
     private String valor;
 
-    private Sala(Byte cod, String valor) {
+    private StatusAgendamento(Byte cod, String valor) {
         this.cod = cod;
         this.valor = valor;
     }
 
-    public static Sala toEnum(Byte cod) {
+    public static StatusAgendamento toEnum(Byte cod) {
         if (cod.equals("")) {
             throw new NullPointerException("Este método não aceita valor nulo!");
         }
 
-        for (Sala sala : Sala.values()) {
-            if (cod.equals(sala.getCod())) {
-                return sala;
+        for (StatusAgendamento status : StatusAgendamento.values()) {
+            if (cod.equals(status.getCod())) {
+                return status;
             }
         }
         throw new ArrayIndexOutOfBoundsException("Código inexistente!");

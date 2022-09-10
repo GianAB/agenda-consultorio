@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package entities;
+package model.entities;
 
 /**
  *
@@ -15,6 +15,11 @@ public class Paciente {
     private String cpf;
 
     public Paciente() {
+    }
+
+    public Paciente(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
     public Paciente(Integer id, String nome, String cpf) {
@@ -57,6 +62,5 @@ public class Paciente {
         sb.append("\n}");
         return sb.toString();
     }
-    
-    
+
 }
