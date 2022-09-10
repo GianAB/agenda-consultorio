@@ -13,29 +13,40 @@ import java.time.Instant;
  * @author giang
  */
 public class Agenda {
-    private Instant dt_atendimento;
+
+    private Instant dtAtendimento;
     private Sala sala;
     private Medico medico;
     private Paciente paciente;
     private StatusAgendamento statusAgendamento;
-    
-    public Agenda() {
-    }    
 
-    public Agenda(Instant dt_atendimento, Byte codSala, Medico medico, Paciente paciente, Byte codStatusAgendamento) {
-        this.dt_atendimento = dt_atendimento;
+    public Agenda() {
+    }
+
+    public Agenda(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public Agenda(Instant dtAtendimento, Byte codSala, Medico medico) {
+        this.dtAtendimento = dtAtendimento;
+        this.sala = Sala.toEnum(codSala);
+        this.medico = medico;
+    }
+
+    public Agenda(Instant dtAtendimento, Byte codSala, Medico medico, Paciente paciente, Byte codStatusAgendamento) {
+        this.dtAtendimento = dtAtendimento;
         this.sala = Sala.toEnum(codSala);
         this.medico = medico;
         this.paciente = paciente;
         this.statusAgendamento = statusAgendamento.toEnum(codStatusAgendamento);
     }
 
-    public Instant getDt_atendimento() {
-        return dt_atendimento;
+    public Instant getDtAtendimento() {
+        return dtAtendimento;
     }
 
-    public void setDt_atendimento(Instant dt_atendimento) {
-        this.dt_atendimento = dt_atendimento;
+    public void setDtAtendimento(Instant dtAtendimento) {
+        this.dtAtendimento = dtAtendimento;
     }
 
     public Sala getSala() {
@@ -74,7 +85,7 @@ public class Agenda {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Agenda{");
-        sb.append("\ndt_atendimento=").append(dt_atendimento);
+        sb.append("\ndtAtendimento=").append(dtAtendimento);
         sb.append("\nsala=").append(sala);
         sb.append("\nmedico=").append(medico);
         sb.append("\npaciente=").append(paciente);
@@ -82,6 +93,5 @@ public class Agenda {
         sb.append("\n}");
         return sb.toString();
     }
-    
-    
+
 }

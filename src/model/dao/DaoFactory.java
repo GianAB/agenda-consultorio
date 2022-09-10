@@ -5,6 +5,9 @@
 package model.dao;
 
 import db.DB;
+import model.impl.AgendaDaoJDBC;
+import model.impl.ContatoDaoJDBC;
+import model.impl.MedicoDaoJDBC;
 import model.impl.PacienteDaoJDBC;
 
 /**
@@ -15,5 +18,17 @@ public class DaoFactory {
 
     public static PacienteDao newPacienteDao() {
             return new PacienteDaoJDBC(DB.getConnection());
+    }
+
+    public static ContatoDao newContatoDao() {
+            return new ContatoDaoJDBC(DB.getConnection());
+    }
+    
+    public static MedicoDao newMedicoDao() {
+            return new MedicoDaoJDBC(DB.getConnection());
+    }
+    
+    public static AgendaDao newAgendaDao() {
+            return new AgendaDaoJDBC(DB.getConnection());
     }
 }
